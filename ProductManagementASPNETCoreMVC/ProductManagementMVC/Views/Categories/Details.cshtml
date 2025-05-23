@@ -1,0 +1,16 @@
+﻿@model BusinessObjects.Category
+<h1>Chi tiết danh mục</h1>
+<div>
+    <h4>@Model.CategoryName</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.CategoryId)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CategoryId)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.CategoryName)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CategoryName)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CategoryId" class="btn btn-primary">Sửa</a>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</div>

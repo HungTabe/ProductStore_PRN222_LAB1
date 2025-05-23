@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BusinessObjects.Category>
+<h1>Danh sách danh mục</h1>
+<p><a asp-action="Create" class="btn btn-primary">Tạo danh mục mới</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CategoryName)</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.CategoryId">Chi tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
