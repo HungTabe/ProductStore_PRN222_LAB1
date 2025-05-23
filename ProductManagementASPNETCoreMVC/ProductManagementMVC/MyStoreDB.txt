@@ -1,0 +1,21 @@
+﻿Tạo database MyStore với 3 bảng
+
+CREATE TABLE Categories (
+    CategoryId INT PRIMARY KEY IDENTITY(1,1),
+    CategoryName NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Products (
+    ProductId INT PRIMARY KEY IDENTITY(1,1),
+    ProductName NVARCHAR(100) NOT NULL,
+    CategoryId INT FOREIGN KEY REFERENCES Categories(CategoryId),
+    UnitsInStock INT,
+    UnitPrice DECIMAL(18,2)
+);
+
+CREATE TABLE AccountMember (
+    MemberId NVARCHAR(50) PRIMARY KEY,
+    EmailAddress NVARCHAR(100) NOT NULL,
+    FullName NVARCHAR(100),
+    MemberPassword NVARCHAR(100) NOT NULL
+);
